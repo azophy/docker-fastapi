@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:80"
+    #environment:
+      #- APP_NAME=other names
+    volumes:
+      - .:/app
+    command: uvicorn server:app --reload --port 80 --host 0.0.0.0
